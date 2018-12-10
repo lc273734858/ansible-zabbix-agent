@@ -1,0 +1,5 @@
+- hosts: NeedZabbixClient
+  vars:
+    server: 192.168.12.16
+  roles:
+    - install_zabbix_client

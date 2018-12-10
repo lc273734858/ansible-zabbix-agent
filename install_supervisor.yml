@@ -1,0 +1,3 @@
+- hosts: supervisor 
+  roles:
+  - install_supervisor 

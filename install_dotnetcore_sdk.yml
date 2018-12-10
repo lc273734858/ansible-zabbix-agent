@@ -1,0 +1,7 @@
+- hosts: dotnetcore
+  vars: 
+    dotnetveresion: dotnet-sdk-2.1
+  vars_files:
+  - ./external_var/dot_sdk_var.yml
+  roles:
+  - install_dotnetcore

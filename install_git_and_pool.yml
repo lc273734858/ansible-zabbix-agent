@@ -1,0 +1,7 @@
+- hosts: git
+  vars:
+    dotnetveresion: aspnetcore-runtime-2.1 #dotnet-sdk-2.1
+  roles:
+    - install_git_29
+    - install_dotnetcore
+    - install_tfs_agent_pool

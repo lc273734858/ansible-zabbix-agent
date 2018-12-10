@@ -1,0 +1,13 @@
+- name: stop zabbix_agent
+  shell: pkill -9 zabbix_agentd
+  ignore_errors: yes
+- name: add some users
+  user: name=zabbix group=root state=present
+- name: Copy zabbix_agent
+  copy: src=zabbix_agentd dest=/usr/sbin/zabbix_agentd owner=root group=root mode=0777
+- name: generate dest file
+  template: src=zabbix_agentd.conf dest=/usr/local/etc/zabbix_agentd.conf owner=root group=root mode=0777
+# - name: Copy zabbix_agent.conf
+#   copy: src=zabbix_agentd.conf dest=/usr/local/etc/zabbix_agentd.conf owner=root group=root
+- name: start zabbix
+  shell: /usr/sbin/zabbix_agentd

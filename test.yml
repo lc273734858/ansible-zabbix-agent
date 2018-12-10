@@ -1,0 +1,14 @@
+- hosts: localhost
+  connection: local
+  vars_prompt:
+    - name: 'https_passphrase' #存储数据的变量名
+      prompt: 'https_passphrase' #手工输入数据
+      private: false #当该值为yes，则用户的输入不会被打印
+    - name: 'https_passphrase1' #存储数据的变量名
+      prompt: 'https_passphrase1' #手工输入数据
+      private: false #当该值为yes，则用户的输入不会被打印
+    - name: 'https_passphrase2' #存储数据的变量名
+      prompt: 'https_passphrase2' #手工输入数据
+      private: false #当该值为yes，则用户的输入不会被打印
+  tasks:
+    - debug: var=ansible_default_ipv4.address
