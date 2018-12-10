@@ -1,5 +1,9 @@
 - hosts: NeedZabbixClient
-  vars:
-    server: 192.168.12.16
+  # vars:
+  #   server: 192.168.12.16
   roles:
     - install_zabbix_client
+  vars_prompt:
+    - name: 'server' #存储数据的变量名
+      prompt: 'server' #手工输入数据
+      private: false #当该值为yes，则用户的输入不会被打印
